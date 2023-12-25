@@ -1,0 +1,26 @@
+package com.smartliving.digitaltwin.integrationlayer.domain.wot.core;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.smartliving.digitaltwin.integrationlayer.domain.wot.hypermedia.Form;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.FieldDefaults;
+import lombok.experimental.SuperBuilder;
+
+import java.util.List;
+import java.util.Map;
+
+@Getter
+@Setter
+@SuperBuilder
+@NoArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
+@JsonInclude(JsonInclude.Include. NON_NULL)
+public class EventAffordance extends DataSchema {
+    List<Form> forms;
+    Map<String, DataSchema> subscription;
+    DataSchema data;
+    DataSchema cancellation;
+}

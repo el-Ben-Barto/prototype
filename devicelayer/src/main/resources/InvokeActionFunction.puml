@@ -1,0 +1,56 @@
+@startuml
+Client-> ServiceRouterFunctions: PUT /v1/action Body:(InvokeActionInput)
+ServiceRouterFunctions -> InvokeActionCommandInPort: invokeAction(InvokeActionInput)))
+InvokeActionCommandInPort -> MongoDBThingRepository: findById(String id)
+MongoDBThingRepository -> InvokeActionCommandInPort: Mono<Thing>
+alt isThingCapableOfHandlingAction(Thing, String) = true
+    alt InvokeActionInput.action = SupportedActions.light || SupportedActions.color
+        alt Thing.Vendor.Id = SupportedVendor.phillipshue
+            alt actionRequiresBody(ActionAffordance) = true
+                InvokeActionCommandInPort-> InvokeActionCommandInPort: requestBody =  constructRequestBody(ActionAffordance, Thing)
+            else
+                InvokeActionCommandInPort-> InvokeActionCommandInPort: requestBody = null
+            end
+            InvokeActionCommandInPort -> InvokeActionCommandOutPort: invokeLightAction(Thing, Document)
+            InvokeActionCommandInPort -> InvokeActionCommandInPort: create InvokeActionResponse
+            InvokeActionCommandInPort -> ServiceRouterFunctions: Mono<InvokeActionResponse>
+        else Thing.Vendor.Id = SupportedVendor.ikea
+            alt actionRequiresBody(ActionAffordance) = true
+                InvokeActionCommandInPort-> InvokeActionCommandInPort: requestBody =  constructRequestBody(ActionAffordance, Thing)
+            else
+                InvokeActionCommandInPort-> InvokeActionCommandInPort: requestBody = null
+            end
+            InvokeActionCommandInPort -> InvokeActionCommandOutPort: invokeLightAction(Thing, Document)
+            InvokeActionCommandInPort -> InvokeActionCommandInPort: create InvokeActionResponse
+            InvokeActionCommandInPort -> ServiceRouterFunctions: Mono<InvokeActionResponse>
+        else false
+            InvokeActionCommandInPort -> ServiceRouterFunctions: Mono.empty()
+    else InvokeActionInput.action = SupportedActions.runtime || SupportedActions.cost || SupportedActions.status || SupportedActions.timetable
+        InvokeActionCommandInPort -> FetchThingsStatusFunction: fetchStatus(String)
+        FetchThingsStatusFunction -> MongoDBThingRepository: findById(String)
+           alt isConnectableDTClassification(Thing) = true
+                alt vendor = SupportedVendors.phillipshue
+                    FetchThingsStatusFunction -> FetchVendorThingsStatusQueryOutPort: fetchStatus(FetchThingStatusRequest)
+                else vendor = SupportedVendors.ikea
+                    FetchThingsStatusFunction -> FetchVendorThingsStatusQueryOutPort: fetchStatus(FetchThingStatusRequest)
+                else false
+                    InvokeActionCommandInPort -> FetchThingsStatusFunction: Mono.empty()
+                end
+                FetchThingsStatusFunction -> MongoDBSLThingRepository: save(SlThing)
+                InvokeActionCommandInPort -> InvokeActionCommandInPort: create InvokeActionResponse
+                InvokeActionCommandInPort -> ServiceRouterFunctions: Mono<InvokeActionResponse>
+           else isConnectableDTClassification(Thing) = false
+                FetchThingsStatusFunction -> MongoDBSLThingRepository: findById(String)
+                InvokeActionCommandInPort -> FetchThingsStatusFunction: Mono<SLThing>
+           end
+        InvokeActionCommandInPort -> InvokeActionCommandInPort: create InvokeActionResponse
+        InvokeActionCommandInPort -> ServiceRouterFunctions: Mono<InvokeActionResponse>
+    else false
+        InvokeActionCommandInPort -> ServiceRouterFunctions: Mono.empty()
+    end
+else isThingCapableOfHandlingAction(Thing, String) = false
+    InvokeActionCommandInPort -> ServiceRouterFunctions: Mono.empty()
+end
+
+ServiceRouterFunctions -> Client: RouterFunction<ServerResponse>
+@enduml

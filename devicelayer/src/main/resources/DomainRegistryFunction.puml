@@ -1,0 +1,15 @@
+@startuml
+Client-> ServiceRouterFunctions: POST /v1/create Body:(SLThingInput)
+ServiceRouterFunctions -> CreateThingCommandInport: createThing(SLThingInput))
+CreateThingCommandInport -> MongoDBThingRepository: save(Thing)
+MongoDBThingRepository -> CreateThingCommandInport: Mono<Thing>
+alt isVendorProduct = true
+    CreateThingCommandInport -> FetchThingsStatusFunction: fetchStatus(String)
+    FetchThingsStatusFunction -> CreateThingCommandInport: Mono<SLThing>
+else isVendorProduct = false
+    CreateThingCommandInport -> MongoDBSLThingRepository: save(SLThing)
+    MongoDBSLThingRepository -> CreateThingCommandInport: Mono<SLThing>
+end
+CreateThingCommandInport -> ServiceRouterFunctions: Mono<SLThing>
+ServiceRouterFunctions -> Client: RouterFunction<ServerResponse>
+@enduml

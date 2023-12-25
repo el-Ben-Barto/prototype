@@ -1,0 +1,4 @@
+FROM openjdk:19
+COPY build/libs/*.jar app-0.0.1.jar
+EXPOSE 8080
+CMD ["java","-jar","app-0.0.1.jar"]

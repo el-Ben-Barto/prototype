@@ -1,0 +1,19 @@
+@startuml
+Client-> ServiceRouterFunctions: PUT /v1/action Body:(InvokeActionInput)
+ServiceRouterFunctions -> InvokeActionCommandInPort: invokeAction(InvokeActionInput)))
+InvokeActionCommandInPort -> MongoDBIntegrationRepository: findById(String id)
+MongoDBIntegrationRepository -> InvokeActionCommandInPort: Mono<Integration>
+alt isThingCapableOfHandlingAction(Integration, String) = true
+    alt actionRequiresBody(ActionAffordance) = true
+        InvokeActionCommandInPort-> InvokeActionCommandInPort: requestBody =  constructRequestBody(ActionAffordance, Integration)
+    else
+        InvokeActionCommandInPort-> InvokeActionCommandInPort: requestBody = null
+    end
+    InvokeActionCommandInPort -> InvokeActionCommandOutPort: invokeAction(Integration, Document)
+    InvokeActionCommandInPort -> InvokeActionCommandInPort: create InvokeActionResponse
+    InvokeActionCommandInPort -> ServiceRouterFunctions: Mono<InvokeActionResponse>
+else isThingCapableOfHandlingAction(Thing, String) = false
+    InvokeActionCommandInPort -> ServiceRouterFunctions: Mono.empty()
+end
+ServiceRouterFunctions -> Client: RouterFunction<ServerResponse>
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+Client-> ServiceRouterFunctions: PUT /v1/action
+ServiceRouterFunctions -> InvokeActionCommandInPort: invokeAction()
+InvokeActionCommandInPort -> MongoDBServiceRepository: findById(String id)
+MongoDBServiceRepository -> InvokeActionCommandInPort: Mono<SLService>
+alt active = true
+
+    loop forEach() registeredInteractions in SLService
+        alt registeredInteraction.type = SLInteractionType.Thing
+            InvokeActionCommandInPort -> InvokeActionCommandOutPort: invokeAction(SLInteractionRequest)
+            InvokeActionCommandOutPort -> InvokeActionCommandInPort: Mono<SLInteractionResponse>
+        else registeredInteraction.type = SLInteractionType.Integration
+            InvokeActionCommandInPort -> InvokeActionCommandOutPort: invokeAction(SLInteractionRequest)
+            InvokeActionCommandOutPort -> InvokeActionCommandInPort: Mono<SLInteractionResponse>
+        end
+
+     end
+    InvokeActionCommandInPort -> ServiceRouterFunctions: Flux<SLInteractionResponse>
+else active = false
+    InvokeActionCommandInPort -> ServiceRouterFunctions: Flux.empty()
+end
+ServiceRouterFunctions -> Client: RouterFunction<ServerResponse>
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+Client-> ServiceRouterFunctions: GET /v1/integration?id={URN}
+ServiceRouterFunctions -> FetchIntegrationQueryInport: fetchIntegrations(String)
+FetchIntegrationQueryInport -> MongoDBIntegrationRepository: findById(String)
+MongoDBIntegrationRepository -> FetchIntegrationQueryInport: Mono<Integration>
+FetchIntegrationQueryInport -> ServiceRouterFunctions: Mono<Integration>
+ServiceRouterFunctions -> Client: RouterFunction<ServerResponse>
+@enduml

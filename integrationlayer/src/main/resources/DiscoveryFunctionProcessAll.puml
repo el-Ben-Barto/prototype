@@ -1,0 +1,8 @@
+@startuml
+Client-> ServiceRouterFunctions: GET /v1/integration
+ServiceRouterFunctions -> FetchIntegrationQueryInport: fetchAllIntegrations()
+FetchIntegrationQueryInport -> MongoDBIntegrationRepository: findAll()
+MongoDBIntegrationRepository -> FetchIntegrationQueryInport: Flux<Integration>
+FetchIntegrationQueryInport -> ServiceRouterFunctions: Flux<Integration>
+ServiceRouterFunctions -> Client: RouterFunction<ServerResponse>
+@enduml

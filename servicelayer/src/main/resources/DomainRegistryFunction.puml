@@ -1,0 +1,8 @@
+@startuml
+Client-> ServiceRouterFunctions: POST /v1/create Body:(SLServiceInput)
+ServiceRouterFunctions -> CreateSLServiceCommandInport: createSLService(SLServiceInput))
+CreateSLServiceCommandInport -> MongoDBSLServiceRepository: save(SLService)
+MongoDBSLServiceRepository -> CreateSLServiceCommandInport: Mono<SLService>
+CreateSLServiceCommandInport -> ServiceRouterFunctions: Mono<SLService>
+ServiceRouterFunctions -> Client: RouterFunction<ServerResponse>
+@enduml
