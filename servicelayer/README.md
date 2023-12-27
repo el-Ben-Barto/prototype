@@ -1,4 +1,4 @@
-## Service Layer for Smart Living Digital Twin - Prototype
+## Service Layer for Digital Twin for Smart Living - Prototype
 ### Requirements
 Java, Gradle, Docker, MongoDB
 
@@ -63,12 +63,9 @@ docker run -p8080:8080 generic:latest
 
 ### Concept 
 The Service Layer for Smart Living Digital Twin - Prototype is part of a distributed system architect containing: Service-Layer, Device-Layer & Integration-Layer
-The Service Layer application is responsible for managing Smart Living (SL Services according to the following definition: ""
-Set up by myself during studies, based on preliminary work of the following papers:
--- 
+The Service Layer application is responsible for managing Smart Living.
 
 The idea behind a SL Digital Twin is to represent different classification of DT which exist in the smart living context. E.g. Not connected car, digital subscriptions, insurance contracts, trash cans, smart home devices, simple sensors.
---> Add Picture here
 
 SL Service is represented via the SLService.class (src.main.java.domain.data.SLService.class)) and can be created, updated & executed with the corresponding REST API (see Open API UI/ src.main.java.web.ServiceRouterFunctions)
 A SLService.class object contains a general description of the service and all Things which are registered in the Device Layer application and the corresponding actions including an optional value to be executed. 
@@ -80,23 +77,4 @@ urn:<env>:service:<UUID>-<name>
 
 ### Error Handling
 Errors will be gathered via the GlobalWebExceptionHandler.class (src.main.java.web.GlobalWebExceptionHandler.class)
-To create custom error response object, adapt the corresponding return Object which will be injected after Exception handling. 
-
-### Known limitations
-As the name of the Service Layer for Smart Living Digital Twin - Prototype says, it is a prototype to test out a reference architecture and should therefore be handled with care.
-Due to the fact, that the application is currently only a Prototype production features are missing and some functionalities are not even implemented.
-In the context of Smart Living data security is an important factor. To meet your needs according to your data classification (like contract ids, etc.)
-use Encryption at rest and in flight or event client side field level encryption to secure your data.
-
-The following list the known limitations of the application with no claim to completeness.
-
--- Missing Security features
--- Integration only of phillips hue as vendor
--- Integration of light status change, change events and motion sensor
--- Missing Automated Deployment Method including the surrounding services
--- Missing Unit Test
--- Vendor action mapping
- 
-
-
-
+To create custom error response object, adapt the corresponding return Object which will be injected after Exception handling.
