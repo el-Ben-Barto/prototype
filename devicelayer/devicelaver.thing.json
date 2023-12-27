@@ -1,0 +1,2694 @@
+[{
+  "_id": "urn:dev:thing:ec90caed-4785-420a-b044-cef614e0ecd6-sultan_bulb",
+  "at_context": [
+    "https://www.w3.org/2019/wot/td/v1",
+    {
+      "htv": "http://www.w3.org/2011/http#"
+    }
+  ],
+  "title": "Esszimmer 2",
+  "actions": {
+    "status": {
+      "forms": [
+        {
+          "op": "readallproperties",
+          "href": "https://<hue-bridege-ip>/clip/v2/resource/light/<rid>",
+          "contentType": "application/json",
+          "htv_methodName": "GET"
+        }
+      ],
+      "safe": true,
+      "idempotent": true,
+      "output": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "id_v1": {
+                "type": "string"
+              },
+              "owner": {
+                "type": "object",
+                "properties": {
+                  "rid": {
+                    "type": "string"
+                  },
+                  "rtype": {
+                    "type": "string"
+                  }
+                }
+              },
+              "metadata": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "archetype": {
+                    "type": "string"
+                  },
+                  "function": {
+                    "type": "string"
+                  }
+                }
+              },
+              "product_data": {
+                "type": "object",
+                "properties": {
+                  "function": {
+                    "type": "string"
+                  }
+                }
+              },
+              "color": {
+                "type": "object",
+                "properties": {
+                  "xy": {
+                    "type": "object",
+                    "properties": {
+                      "x": {
+                        "type": "number"
+                      },
+                      "y": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "type": "object",
+                    "properties": {
+                      "red": {
+                        "type": "object",
+                        "properties": {
+                          "x": {
+                            "type": "number"
+                          },
+                          "y": {
+                            "type": "number"
+                          }
+                        }
+                      },
+                      "green": {
+                        "type": "object",
+                        "properties": {
+                          "x": {
+                            "type": "number"
+                          },
+                          "y": {
+                            "type": "number"
+                          }
+                        }
+                      },
+                      "blue": {
+                        "type": "object",
+                        "properties": {
+                          "x": {
+                            "type": "number"
+                          },
+                          "y": {
+                            "type": "number"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "gamut_type": {
+                    "type": "string"
+                  }
+                }
+              },
+              "color_temperature": {
+                "type": "object",
+                "properties": {
+                  "mirek": {
+                    "type": "integer"
+                  },
+                  "mirek_valid": {
+                    "type": "boolean"
+                  },
+                  "mirek_schema": {
+                    "type": "object",
+                    "properties": {
+                      "mirek_minimum": {
+                        "type": "integer"
+                      },
+                      "mirek_maximum": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              },
+              "color_temperature_delta": {
+                "type": "object"
+              },
+              "dimming": {
+                "type": "object",
+                "properties": {
+                  "brightness": {
+                    "type": "number"
+                  },
+                  "min_dim_level": {
+                    "type": "number"
+                  }
+                }
+              },
+              "dimming_delta": {
+                "type": "object"
+              },
+              "identify": {
+                "type": "object"
+              },
+              "on": {
+                "type": "object",
+                "properties": {
+                  "on": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "dynamics": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  },
+                  "status_values": {
+                    "type": "array"
+                  },
+                  "speed": {
+                    "type": "number"
+                  },
+                  "speed_valid": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "alert": {
+                "type": "object",
+                "properties": {
+                  "action_values": {
+                    "type": "array"
+                  }
+                }
+              },
+              "effects": {
+                "type": "object",
+                "properties": {
+                  "status_values": {
+                    "type": "array"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "effect_values": {
+                    "type": "array"
+                  }
+                }
+              },
+              "mode": {
+                "type": "string"
+              },
+              "powerup": {
+                "type": "object",
+                "properties": {
+                  "preset": {
+                    "type": "string"
+                  },
+                  "configured": {
+                    "type": "boolean"
+                  },
+                  "on": {
+                    "type": "object",
+                    "properties": {
+                      "mode": {
+                        "type": "string"
+                      },
+                      "on": {
+                        "type": "string",
+                        "properties": {
+                          "on": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "dimming": {
+                    "type": "object",
+                    "properties": {
+                      "mode": {
+                        "type": "string"
+                      },
+                      "dimming": {
+                        "type": "object",
+                        "properties": {
+                          "brightness": {
+                            "type": "number"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "color": {
+                    "type": "object",
+                    "properties": {
+                      "mode": {
+                        "type": "string"
+                      },
+                      "color_temperature": {
+                        "type": "array"
+                      }
+                    }
+                  }
+                }
+              },
+              "signaling": {
+                "type": "object",
+                "properties": {
+                  "signal_values": {
+                    "type": "array"
+                  }
+                }
+              },
+              "type": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "light": {
+      "forms": [
+        {
+          "op": "invokeaktion",
+          "href": "https://<hue-bridege-ip>/clip/v2/resource/light/<rid>",
+          "contentType": "application/json",
+          "htv_methodName": "PUT"
+        }
+      ],
+      "idempotent": true,
+      "safe": true,
+      "input": {
+        "type": "object",
+        "writeOnly": true,
+        "readOnly": false,
+        "properties": {
+          "on": {
+            "type": "object",
+            "properties": {
+              "on": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "properties": {
+              "rid": {
+                "type": "string"
+              },
+              "rtype": {
+                "type": "string"
+              }
+            }
+          },
+          "error": {
+            "type": "array"
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    "apikey"
+  ],
+  "securityDefinitions": {
+    "apikey": {
+      "in": "header",
+      "name": "hue-application-key"
+    }
+  },
+  "classification": "Digital_Twin",
+  "vendor": {
+    "_id": "Phillips_Hue",
+    "title": "Hue color lamp",
+    "documentation": "https://developers.meethue.com/develop/hue-api-v2/",
+    "attributes": {
+      "model_id": "<model-id>",
+      "manufacturer_name": "Signify Netherlands B.V.",
+      "product_name": "Hue color lamp",
+      "product_archetype": "sultan_bulb",
+      "certified": "true",
+      "software_version": "<version>",
+      "hardware_platform_type": "<type>"
+    }
+  },
+  "human": {
+    "_id": "3e20b7dc-f19d-49fa-851e-c509ba807700",
+    "name": "Ben",
+    "isOwner": true
+  }
+},
+{
+  "_id": "urn:dev:thing:ec90caed-4346-420a-b044-cef614e0ecd6-netflix-account",
+  "at_context": [
+    "https://www.w3.org/2019/wot/td/v1"
+  ],
+  "title": "Netflix Account",
+  "actions": {
+    "status": {
+      "safe": true,
+      "idempotent": true,
+      "output": {
+        "type": "object",
+        "properties": {
+          "notice_period": {
+            "type": "string"
+          },
+          "payment": {
+            "type": "object",
+            "properties": {
+              "frequency": {
+                "type": {}
+              },
+              "amount": {
+                "type": "number"
+              },
+              "currency": {
+                "type": "string"
+              }
+            }
+          },
+          "contract_name": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "runtime": {
+      "safe": true,
+      "idempotent": true,
+      "output": {
+        "type": "object",
+        "properties": {
+          "notice_period": {
+            "type": "string"
+          },
+          "contract_start_time": {
+            "type": "string"
+          },
+          "contract_end_time": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    "nosec"
+  ],
+  "securityDefinitions": {
+    "nosec": {
+      "scheme": "nosec"
+    }
+  },
+  "classification": "Digital_Model_Virtual",
+  "vendor": {
+    "_id": "Netlfix",
+    "title": "Netflix Account"
+  },
+  "human": {
+    "_id": "3e20b7dc-f19d-49fa-851e-c509ba807700",
+    "name": "Ben",
+    "isOwner": true
+  }
+},
+{
+  "_id": "urn:dev:thing:ec90caed-4346-420a-b044-cef614e0ecd6-liability-insurance",
+  "at_context": [
+    "https://www.w3.org/2019/wot/td/v1"
+  ],
+  "title": "Liability Insurance",
+  "actions": {
+    "status": {
+      "safe": true,
+      "idempotent": true,
+      "output": {
+        "type": "object",
+        "properties": {
+          "notice_period": {
+            "type": "string"
+          },
+          "payment": {
+            "type": "object",
+            "properties": {
+              "frequency": {
+                "type": {}
+              },
+              "amount": {
+                "type": "number"
+              },
+              "currency": {
+                "type": "string"
+              }
+            }
+          },
+          "contract_name": {
+            "type": "string"
+          },
+          "contract_end_time": {
+            "type": "string"
+          },
+          "contract_start_time": {
+            "type": "string"
+          },
+          "isterminated": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "runtime": {
+      "safe": true,
+      "idempotent": true,
+      "output": {
+        "type": "object",
+        "properties": {
+          "notice_period": {
+            "type": "string"
+          },
+          "contract_start_time": {
+            "type": "string"
+          },
+          "contract_end_time": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "cost": {
+      "safe": true,
+      "idempotent": true,
+      "output": {
+        "type": "object",
+        "properties": {
+          "payment": {
+            "type": "object",
+            "properties": {
+              "frequency": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "number"
+              },
+              "currency": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    "nosec"
+  ],
+  "securityDefinitions": {
+    "nosec": {
+      "scheme": "nosec"
+    }
+  },
+  "classification": "Digital_Model_Virtual",
+  "vendor": {
+    "_id": "Liability Insurance Company XYZ",
+    "title": "Liability Insurance Company XYZ"
+  },
+  "human": {
+    "_id": "3e20b7dc-f19d-49fa-851e-c509ba807700",
+    "name": "Ben",
+    "isOwner": true
+  }
+},
+{
+  "_id": "urn:dev:thing:ec90caed-9567-420a-b044-cef614e0ecd6-car-1",
+  "at_context": [
+    "https://www.w3.org/2019/wot/td/v1"
+  ],
+  "title": "Car 1",
+  "actions": {
+    "status": {
+      "safe": true,
+      "idempotent": true,
+      "output": {
+        "type": "object",
+        "properties": {
+          "available": {
+            "type": "boolean"
+          },
+          "insurance": {
+            "type": "string"
+          },
+          "tuev": {
+            "type": "object",
+            "properties": {
+              "inspection_date": {
+                "type": "string"
+              },
+              "period": {
+                "type": "string"
+              }
+            }
+          },
+          "hu": {
+            "type": "object",
+            "properties": {
+              "inspection_date": {
+                "type": "string"
+              },
+              "period": {
+                "type": "string"
+              }
+            }
+          },
+          "timetable": {
+            "type": "object",
+            "properties": {
+              "frequency": {
+                "type": "string"
+              },
+              "monday": {
+                "type": "object",
+                "properties": {
+                  "isAllDay": {
+                    "type": "boolean"
+                  },
+                  "from": {
+                    "type": "string"
+                  },
+                  "until": {
+                    "type": "string"
+                  }
+                }
+              },
+              "thuesday": {
+                "type": "object",
+                "properties": {
+                  "isAllDay": {
+                    "type": "boolean"
+                  },
+                  "from": {
+                    "type": "string"
+                  },
+                  "until": {
+                    "type": "string"
+                  }
+                }
+              },
+              "wednesday": {
+                "type": "object",
+                "properties": {
+                  "isAllDay": {
+                    "type": "boolean"
+                  },
+                  "from": {
+                    "type": "string"
+                  },
+                  "until": {
+                    "type": "string"
+                  }
+                }
+              },
+              "thursday": {
+                "type": "object",
+                "properties": {
+                  "isAllDay": {
+                    "type": "boolean"
+                  },
+                  "from": {
+                    "type": "string"
+                  },
+                  "until": {
+                    "type": "string"
+                  }
+                }
+              },
+              "friday": {
+                "type": "object",
+                "properties": {
+                  "isAllDay": {
+                    "type": "boolean"
+                  },
+                  "from": {
+                    "type": "string"
+                  },
+                  "until": {
+                    "type": "string"
+                  }
+                }
+              },
+              "saturday": {
+                "type": "object",
+                "properties": {
+                  "isAllDay": {
+                    "type": "boolean"
+                  },
+                  "from": {
+                    "type": "string"
+                  },
+                  "until": {
+                    "type": "string"
+                  }
+                }
+              },
+              "sunday": {
+                "type": "object",
+                "properties": {
+                  "isAllDay": {
+                    "type": "boolean"
+                  },
+                  "from": {
+                    "type": "string"
+                  },
+                  "until": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "payment": {
+            "type": "object",
+            "properties": {
+              "frequency": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "number"
+              },
+              "currency": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "timetable": {
+      "safe": true,
+      "idempotent": true,
+      "output": {
+        "type": "object",
+        "timetable": {
+          "type": "object",
+          "properties": {
+            "frequency": {
+              "type": "string"
+            },
+            "monday": {
+              "type": "object",
+              "properties": {
+                "isAllDay": {
+                  "type": "boolean"
+                },
+                "from": {
+                  "type": "string"
+                },
+                "until": {
+                  "type": "string"
+                }
+              }
+            },
+            "thuesday": {
+              "type": "object",
+              "properties": {
+                "isAllDay": {
+                  "type": "boolean"
+                },
+                "from": {
+                  "type": "string"
+                },
+                "until": {
+                  "type": "string"
+                }
+              }
+            },
+            "wednesday": {
+              "type": "object",
+              "properties": {
+                "isAllDay": {
+                  "type": "boolean"
+                },
+                "from": {
+                  "type": "string"
+                },
+                "until": {
+                  "type": "string"
+                }
+              }
+            },
+            "thursday": {
+              "type": "object",
+              "properties": {
+                "isAllDay": {
+                  "type": "boolean"
+                },
+                "from": {
+                  "type": "string"
+                },
+                "until": {
+                  "type": "string"
+                }
+              }
+            },
+            "friday": {
+              "type": "object",
+              "properties": {
+                "isAllDay": {
+                  "type": "boolean"
+                },
+                "from": {
+                  "type": "string"
+                },
+                "until": {
+                  "type": "string"
+                }
+              }
+            },
+            "saturday": {
+              "type": "object",
+              "properties": {
+                "isAllDay": {
+                  "type": "boolean"
+                },
+                "from": {
+                  "type": "string"
+                },
+                "until": {
+                  "type": "string"
+                }
+              }
+            },
+            "sunday": {
+              "type": "object",
+              "properties": {
+                "isAllDay": {
+                  "type": "boolean"
+                },
+                "from": {
+                  "type": "string"
+                },
+                "until": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "runtime": {
+      "safe": true,
+      "idempotent": true,
+      "output": {
+        "type": "object",
+        "properties": {
+          "tuev": {
+            "type": "object",
+            "properties": {
+              "inspection_date": {
+                "type": "string"
+              },
+              "period": {
+                "type": "string"
+              }
+            }
+          },
+          "hu": {
+            "type": "object",
+            "properties": {
+              "inspection_date": {
+                "type": "string"
+              },
+              "period": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "cost": {
+      "safe": true,
+      "idempotent": true,
+      "output": {
+        "type": "object",
+        "properties": {
+          "payment": {
+            "type": "object",
+            "properties": {
+              "frequency": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "number"
+              },
+              "currency": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    "nosec"
+  ],
+  "securityDefinitions": {
+    "nosec": {
+      "scheme": "nosec"
+    }
+  },
+  "classification": "Digital_Model",
+  "vendor": {
+    "_id": "Car Manufacturer XYZ",
+    "title": "Model Type ABC"
+  },
+  "human": {
+    "_id": "3e20b7dc-f19d-49fa-851e-c509ba807700",
+    "name": "Ben",
+    "isOwner": true
+  }
+},
+{
+  "_id": "urn:dev:thing:e8405641-2619-45c1-b365-9e0e3cf18475-sultan_bulb",
+  "at_context": [
+    "https://www.w3.org/2019/wot/td/v1",
+    {
+      "htv": "http://www.w3.org/2011/http#"
+    }
+  ],
+  "title": "Esszimmer 3",
+  "actions": {
+    "status": {
+      "forms": [
+        {
+          "op": "readallproperties",
+          "href": "https://<hue-bridege-ip>/clip/v2/resource/light/<rid>",
+          "contentType": "application/json",
+          "htv_methodName": "GET"
+        }
+      ],
+      "safe": true,
+      "idempotent": true,
+      "output": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "id_v1": {
+                "type": "string"
+              },
+              "owner": {
+                "type": "object",
+                "properties": {
+                  "rid": {
+                    "type": "string"
+                  },
+                  "rtype": {
+                    "type": "string"
+                  }
+                }
+              },
+              "metadata": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "archetype": {
+                    "type": "string"
+                  },
+                  "function": {
+                    "type": "string"
+                  }
+                }
+              },
+              "product_data": {
+                "type": "object",
+                "properties": {
+                  "function": {
+                    "type": "string"
+                  }
+                }
+              },
+              "color": {
+                "type": "object",
+                "properties": {
+                  "xy": {
+                    "type": "object",
+                    "properties": {
+                      "x": {
+                        "type": "number"
+                      },
+                      "y": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "type": "object",
+                    "properties": {
+                      "red": {
+                        "type": "object",
+                        "properties": {
+                          "x": {
+                            "type": "number"
+                          },
+                          "y": {
+                            "type": "number"
+                          }
+                        }
+                      },
+                      "green": {
+                        "type": "object",
+                        "properties": {
+                          "x": {
+                            "type": "number"
+                          },
+                          "y": {
+                            "type": "number"
+                          }
+                        }
+                      },
+                      "blue": {
+                        "type": "object",
+                        "properties": {
+                          "x": {
+                            "type": "number"
+                          },
+                          "y": {
+                            "type": "number"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "gamut_type": {
+                    "type": "string"
+                  }
+                }
+              },
+              "color_temperature": {
+                "type": "object",
+                "properties": {
+                  "mirek": {
+                    "type": "integer"
+                  },
+                  "mirek_valid": {
+                    "type": "boolean"
+                  },
+                  "mirek_schema": {
+                    "type": "object",
+                    "properties": {
+                      "mirek_minimum": {
+                        "type": "integer"
+                      },
+                      "mirek_maximum": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              },
+              "color_temperature_delta": {
+                "type": "object"
+              },
+              "dimming": {
+                "type": "object",
+                "properties": {
+                  "brightness": {
+                    "type": "number"
+                  },
+                  "min_dim_level": {
+                    "type": "number"
+                  }
+                }
+              },
+              "dimming_delta": {
+                "type": "object"
+              },
+              "identify": {
+                "type": "object"
+              },
+              "on": {
+                "type": "object",
+                "properties": {
+                  "on": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "dynamics": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  },
+                  "status_values": {
+                    "type": "array"
+                  },
+                  "speed": {
+                    "type": "number"
+                  },
+                  "speed_valid": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "alert": {
+                "type": "object",
+                "properties": {
+                  "action_values": {
+                    "type": "array"
+                  }
+                }
+              },
+              "effects": {
+                "type": "object",
+                "properties": {
+                  "status_values": {
+                    "type": "array"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "effect_values": {
+                    "type": "array"
+                  }
+                }
+              },
+              "mode": {
+                "type": "string"
+              },
+              "powerup": {
+                "type": "object",
+                "properties": {
+                  "preset": {
+                    "type": "string"
+                  },
+                  "configured": {
+                    "type": "boolean"
+                  },
+                  "on": {
+                    "type": "object",
+                    "properties": {
+                      "mode": {
+                        "type": "string"
+                      },
+                      "on": {
+                        "type": "string",
+                        "properties": {
+                          "on": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "dimming": {
+                    "type": "object",
+                    "properties": {
+                      "mode": {
+                        "type": "string"
+                      },
+                      "dimming": {
+                        "type": "object",
+                        "properties": {
+                          "brightness": {
+                            "type": "number"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "color": {
+                    "type": "object",
+                    "properties": {
+                      "mode": {
+                        "type": "string"
+                      },
+                      "color_temperature": {
+                        "type": "array"
+                      }
+                    }
+                  }
+                }
+              },
+              "signaling": {
+                "type": "object",
+                "properties": {
+                  "signal_values": {
+                    "type": "array"
+                  }
+                }
+              },
+              "type": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "light": {
+      "forms": [
+        {
+          "op": "invokeaktion",
+          "href": "https://<hue-bridege-ip>/clip/v2/resource/light/<rid>",
+          "contentType": "application/json",
+          "htv_methodName": "PUT"
+        }
+      ],
+      "idempotent": true,
+      "safe": true,
+      "input": {
+        "type": "object",
+        "writeOnly": true,
+        "readOnly": false,
+        "properties": {
+          "on": {
+            "type": "object",
+            "properties": {
+              "on": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "properties": {
+              "rid": {
+                "type": "string"
+              },
+              "rtype": {
+                "type": "string"
+              }
+            }
+          },
+          "error": {
+            "type": "array"
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    "apikey"
+  ],
+  "securityDefinitions": {
+    "apikey": {
+      "in": "header",
+      "name": "hue-application-key"
+    }
+  },
+  "classification": "Digital_Twin",
+  "vendor": {
+    "title": "Phillips_Hue",
+    "documentation": "https://developers.meethue.com/develop/hue-api-v2/",
+    "attributes": {
+      "model_id": "<model-id>",
+      "manufacturer_name": "Signify Netherlands B.V.",
+      "product_name": "Hue color lamp",
+      "product_archetype": "sultan_bulb",
+      "certified": "true",
+      "software_version": "<version>",
+      "hardware_platform_type": "<type>"
+    },
+    "_id": "Phillips_Hue"
+  },
+  "human": {
+    "name": "Ben",
+    "isOwner": true
+  }
+},
+{
+  "_id": "urn:dev:thing:ec90caed-5684-420a-b044-cef614e0ecd6-trash-can-paper-1",
+  "at_context": [
+    "https://www.w3.org/2019/wot/td/v1"
+  ],
+  "title": "Trash Can paper",
+  "actions": {
+    "status": {
+      "safe": true,
+      "idempotent": true,
+      "output": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string"
+          },
+          "volume_liter": {
+            "type": "integer"
+          },
+          "payment": {
+            "type": "object",
+            "properties": {
+              "frequency": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "number"
+              },
+              "currency": {
+                "type": "string"
+              }
+            }
+          },
+          "timetable": {
+            "type": "object",
+            "properties": {
+              "frequency": {
+                "type": "string"
+              },
+              "monday": {
+                "type": "object",
+                "properties": {
+                  "isAllDay": {
+                    "type": "boolean"
+                  },
+                  "from": {
+                    "type": "string"
+                  },
+                  "until": {
+                    "type": "string"
+                  }
+                }
+              },
+              "thuesday": {
+                "type": "object",
+                "properties": {
+                  "isAllDay": {
+                    "type": "boolean"
+                  },
+                  "from": {
+                    "type": "string"
+                  },
+                  "until": {
+                    "type": "string"
+                  }
+                }
+              },
+              "wednesday": {
+                "type": "object",
+                "properties": {
+                  "isAllDay": {
+                    "type": "boolean"
+                  },
+                  "from": {
+                    "type": "string"
+                  },
+                  "until": {
+                    "type": "string"
+                  }
+                }
+              },
+              "thursday": {
+                "type": "object",
+                "properties": {
+                  "isAllDay": {
+                    "type": "boolean"
+                  },
+                  "from": {
+                    "type": "string"
+                  },
+                  "until": {
+                    "type": "string"
+                  }
+                }
+              },
+              "friday": {
+                "type": "object",
+                "properties": {
+                  "isAllDay": {
+                    "type": "boolean"
+                  },
+                  "from": {
+                    "type": "string"
+                  },
+                  "until": {
+                    "type": "string"
+                  }
+                }
+              },
+              "saturday": {
+                "type": "object",
+                "properties": {
+                  "isAllDay": {
+                    "type": "boolean"
+                  },
+                  "from": {
+                    "type": "string"
+                  },
+                  "until": {
+                    "type": "string"
+                  }
+                }
+              },
+              "sunday": {
+                "type": "object",
+                "properties": {
+                  "isAllDay": {
+                    "type": "boolean"
+                  },
+                  "from": {
+                    "type": "string"
+                  },
+                  "until": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "cost": {
+      "safe": true,
+      "idempotent": true,
+      "output": {
+        "type": "object",
+        "properties": {
+          "payment": {
+            "type": "object",
+            "properties": {
+              "frequency": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "number"
+              },
+              "currency": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "timetable": {
+      "safe": true,
+      "idempotent": true,
+      "output": {
+        "type": "object",
+        "timetable": {
+          "type": "object",
+          "properties": {
+            "frequency": {
+              "type": "string"
+            },
+            "monday": {
+              "type": "object",
+              "properties": {
+                "isAllDay": {
+                  "type": "boolean"
+                },
+                "from": {
+                  "type": "string"
+                },
+                "until": {
+                  "type": "string"
+                }
+              }
+            },
+            "thuesday": {
+              "type": "object",
+              "properties": {
+                "isAllDay": {
+                  "type": "boolean"
+                },
+                "from": {
+                  "type": "string"
+                },
+                "until": {
+                  "type": "string"
+                }
+              }
+            },
+            "wednesday": {
+              "type": "object",
+              "properties": {
+                "isAllDay": {
+                  "type": "boolean"
+                },
+                "from": {
+                  "type": "string"
+                },
+                "until": {
+                  "type": "string"
+                }
+              }
+            },
+            "thursday": {
+              "type": "object",
+              "properties": {
+                "isAllDay": {
+                  "type": "boolean"
+                },
+                "from": {
+                  "type": "string"
+                },
+                "until": {
+                  "type": "string"
+                }
+              }
+            },
+            "friday": {
+              "type": "object",
+              "properties": {
+                "isAllDay": {
+                  "type": "boolean"
+                },
+                "from": {
+                  "type": "string"
+                },
+                "until": {
+                  "type": "string"
+                }
+              }
+            },
+            "saturday": {
+              "type": "object",
+              "properties": {
+                "isAllDay": {
+                  "type": "boolean"
+                },
+                "from": {
+                  "type": "string"
+                },
+                "until": {
+                  "type": "string"
+                }
+              }
+            },
+            "sunday": {
+              "type": "object",
+              "properties": {
+                "isAllDay": {
+                  "type": "boolean"
+                },
+                "from": {
+                  "type": "string"
+                },
+                "until": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    "nosec"
+  ],
+  "securityDefinitions": {
+    "nosec": {
+      "scheme": "nosec"
+    }
+  },
+  "classification": "Digital_Model",
+  "vendor": {
+    "_id": "AVL",
+    "title": "Model Type ABC"
+  },
+  "human": {
+    "_id": "3e20b7dc-f19d-49fa-851e-c509ba807700",
+    "name": "Ben",
+    "isOwner": true
+  }
+},
+{
+  "_id": "urn:dev:thing:ec90caed-9567-420a-b044-cef614e0ecd6-motorbike-1",
+  "at_context": [
+    "https://www.w3.org/2019/wot/td/v1"
+  ],
+  "title": "Motorbike 1",
+  "actions": {
+    "status": {
+      "safe": true,
+      "idempotent": true,
+      "output": {
+        "type": "object",
+        "properties": {
+          "available": {
+            "type": "boolean"
+          },
+          "insurance": {
+            "type": "string"
+          },
+          "tuev": {
+            "type": "object",
+            "properties": {
+              "inspection_date": {
+                "type": "string"
+              },
+              "period": {
+                "type": "string"
+              }
+            }
+          },
+          "hu": {
+            "type": "object",
+            "properties": {
+              "inspection_date": {
+                "type": "string"
+              },
+              "period": {
+                "type": "string"
+              }
+            }
+          },
+          "timetable": {
+            "type": "object",
+            "properties": {
+              "frequency": {
+                "type": "string"
+              },
+              "monday": {
+                "type": "object",
+                "properties": {
+                  "isAllDay": {
+                    "type": "boolean"
+                  },
+                  "from": {
+                    "type": "string"
+                  },
+                  "until": {
+                    "type": "string"
+                  }
+                }
+              },
+              "thuesday": {
+                "type": "object",
+                "properties": {
+                  "isAllDay": {
+                    "type": "boolean"
+                  },
+                  "from": {
+                    "type": "string"
+                  },
+                  "until": {
+                    "type": "string"
+                  }
+                }
+              },
+              "wednesday": {
+                "type": "object",
+                "properties": {
+                  "isAllDay": {
+                    "type": "boolean"
+                  },
+                  "from": {
+                    "type": "string"
+                  },
+                  "until": {
+                    "type": "string"
+                  }
+                }
+              },
+              "thursday": {
+                "type": "object",
+                "properties": {
+                  "isAllDay": {
+                    "type": "boolean"
+                  },
+                  "from": {
+                    "type": "string"
+                  },
+                  "until": {
+                    "type": "string"
+                  }
+                }
+              },
+              "friday": {
+                "type": "object",
+                "properties": {
+                  "isAllDay": {
+                    "type": "boolean"
+                  },
+                  "from": {
+                    "type": "string"
+                  },
+                  "until": {
+                    "type": "string"
+                  }
+                }
+              },
+              "saturday": {
+                "type": "object",
+                "properties": {
+                  "isAllDay": {
+                    "type": "boolean"
+                  },
+                  "from": {
+                    "type": "string"
+                  },
+                  "until": {
+                    "type": "string"
+                  }
+                }
+              },
+              "sunday": {
+                "type": "object",
+                "properties": {
+                  "isAllDay": {
+                    "type": "boolean"
+                  },
+                  "from": {
+                    "type": "string"
+                  },
+                  "until": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "payment": {
+            "type": "object",
+            "properties": {
+              "frequency": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "number"
+              },
+              "currency": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "timetable": {
+      "safe": true,
+      "idempotent": true,
+      "output": {
+        "type": "object",
+        "timetable": {
+          "type": "object",
+          "properties": {
+            "frequency": {
+              "type": "string"
+            },
+            "monday": {
+              "type": "object",
+              "properties": {
+                "isAllDay": {
+                  "type": "boolean"
+                },
+                "from": {
+                  "type": "string"
+                },
+                "until": {
+                  "type": "string"
+                }
+              }
+            },
+            "thuesday": {
+              "type": "object",
+              "properties": {
+                "isAllDay": {
+                  "type": "boolean"
+                },
+                "from": {
+                  "type": "string"
+                },
+                "until": {
+                  "type": "string"
+                }
+              }
+            },
+            "wednesday": {
+              "type": "object",
+              "properties": {
+                "isAllDay": {
+                  "type": "boolean"
+                },
+                "from": {
+                  "type": "string"
+                },
+                "until": {
+                  "type": "string"
+                }
+              }
+            },
+            "thursday": {
+              "type": "object",
+              "properties": {
+                "isAllDay": {
+                  "type": "boolean"
+                },
+                "from": {
+                  "type": "string"
+                },
+                "until": {
+                  "type": "string"
+                }
+              }
+            },
+            "friday": {
+              "type": "object",
+              "properties": {
+                "isAllDay": {
+                  "type": "boolean"
+                },
+                "from": {
+                  "type": "string"
+                },
+                "until": {
+                  "type": "string"
+                }
+              }
+            },
+            "saturday": {
+              "type": "object",
+              "properties": {
+                "isAllDay": {
+                  "type": "boolean"
+                },
+                "from": {
+                  "type": "string"
+                },
+                "until": {
+                  "type": "string"
+                }
+              }
+            },
+            "sunday": {
+              "type": "object",
+              "properties": {
+                "isAllDay": {
+                  "type": "boolean"
+                },
+                "from": {
+                  "type": "string"
+                },
+                "until": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "runtime": {
+      "safe": true,
+      "idempotent": true,
+      "output": {
+        "type": "object",
+        "properties": {
+          "tuev": {
+            "type": "object",
+            "properties": {
+              "inspection_date": {
+                "type": "string"
+              },
+              "period": {
+                "type": "string"
+              }
+            }
+          },
+          "hu": {
+            "type": "object",
+            "properties": {
+              "inspection_date": {
+                "type": "string"
+              },
+              "period": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "cost": {
+      "safe": true,
+      "idempotent": true,
+      "output": {
+        "type": "object",
+        "properties": {
+          "payment": {
+            "type": "object",
+            "properties": {
+              "frequency": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "number"
+              },
+              "currency": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    "nosec"
+  ],
+  "securityDefinitions": {
+    "nosec": {
+      "scheme": "nosec"
+    }
+  },
+  "classification": "Digital_Model",
+  "vendor": {
+    "_id": "Motorbike Manufacturer XYZ",
+    "title": "Model Type ABC"
+  },
+  "human": {
+    "_id": "3e20b7dc-f19d-49fa-851e-c509ba807700",
+    "name": "Ben",
+    "isOwner": true
+  }
+},
+{
+  "_id": "urn:dev:thing:01d64c9c-dac9-49c2-b115-917328397335-Hue-secure-contact-sensor",
+  "at_context": [
+    "https://www.w3.org/2019/wot/td/v1",
+    {
+      "htv": "http://www.w3.org/2011/http#"
+    }
+  ],
+  "title": "Eingangstür",
+  "actions": {
+    "status": {
+      "forms": [
+        {
+          "op": "readallproperties",
+          "href": "https://<hue-bridege-ip>/clip/v2/resource/contact/<rid>",
+          "contentType": "application/json",
+          "htv_methodName": "GET"
+        }
+      ],
+      "safe": true,
+      "idempotent": true,
+      "output": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "id_v1": {
+                "type": "string"
+              },
+              "owner": {
+                "type": "object",
+                "properties": {
+                  "rid": {
+                    "type": "string"
+                  },
+                  "rtype": {
+                    "type": "string"
+                  }
+                }
+              },
+              "enabled": {
+                "type": "boolean"
+              },
+              "contact_report": {
+                "type": "object",
+                "properties": {
+                  "changed": {
+                    "type": "string"
+                  },
+                  "state": {
+                    "type": "string"
+                  }
+                }
+              },
+              "type": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "battery": {
+      "forms": [
+        {
+          "op": "readallproperties",
+          "href": "https://<hue-bridege-ip>/clip/v2/resource/device_power/<rid>",
+          "contentType": "application/json",
+          "htv_methodName": "GET"
+        }
+      ],
+      "idempotent": true,
+      "safe": true,
+      "output": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "id_v1": {
+                "type": "string"
+              },
+              "owner": {
+                "type": "object",
+                "properties": {
+                  "rid": {
+                    "type": "string"
+                  },
+                  "rtype": {
+                    "type": "string"
+                  }
+                }
+              },
+              "power_state": {
+                "type": "object",
+                "properties": {
+                  "battery_state": {
+                    "type": "string"
+                  },
+                  "battery_level": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    "apikey"
+  ],
+  "securityDefinitions": {
+    "apikey": {
+      "in": "header",
+      "name": "hue-application-key"
+    }
+  },
+  "classification": "Digital_Shadow",
+  "vendor": {
+    "_id": "Phillips_Hue",
+    "title": "Hue secure contact sensor",
+    "documentation": "https://developers.meethue.com/develop/hue-api-v2/",
+    "attributes": {
+      "model_id": "<model-id>",
+      "manufacturer_name": "Signify Netherlands B.V.",
+      "product_name": "Hue secure contact sensor",
+      "product_archetype": "unknown_archetype",
+      "certified": "true",
+      "software_version": "<version>",
+      "hardware_platform_type": "<type>"
+    }
+  },
+  "human": {
+    "_id": "3e20b7dc-f19d-49fa-851e-c509ba807700",
+    "name": "Ben",
+    "isOwner": true
+  }
+},
+{
+  "_id": "urn:dev:thing:abbd54bb-f2b5-4dd2-a4b8-22ab5ab768b9-hue_lightstrip",
+  "at_context": [
+    "https://www.w3.org/2019/wot/td/v1",
+    {
+      "htv": "http://www.w3.org/2011/http#"
+    }
+  ],
+  "title": "Fensterbank",
+  "actions": {
+    "status": {
+      "forms": [
+        {
+          "op": "readallproperties",
+          "href": "https://<hue-bridege-ip>/clip/v2/resource/light/<rid>",
+          "contentType": "application/json",
+          "htv_methodName": "GET"
+        }
+      ],
+      "safe": true,
+      "idempotent": true,
+      "output": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "id_v1": {
+                "type": "string"
+              },
+              "owner": {
+                "type": "object",
+                "properties": {
+                  "rid": {
+                    "type": "string"
+                  },
+                  "rtype": {
+                    "type": "string"
+                  }
+                }
+              },
+              "metadata": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "archetype": {
+                    "type": "string"
+                  },
+                  "function": {
+                    "type": "string"
+                  }
+                }
+              },
+              "product_data": {
+                "type": "object",
+                "properties": {
+                  "function": {
+                    "type": "string"
+                  }
+                }
+              },
+              "color": {
+                "type": "object",
+                "properties": {
+                  "xy": {
+                    "type": "object",
+                    "properties": {
+                      "x": {
+                        "type": "number"
+                      },
+                      "y": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "gamut": {
+                    "type": "object",
+                    "properties": {
+                      "red": {
+                        "type": "object",
+                        "properties": {
+                          "x": {
+                            "type": "number"
+                          },
+                          "y": {
+                            "type": "number"
+                          }
+                        }
+                      },
+                      "green": {
+                        "type": "object",
+                        "properties": {
+                          "x": {
+                            "type": "number"
+                          },
+                          "y": {
+                            "type": "number"
+                          }
+                        }
+                      },
+                      "blue": {
+                        "type": "object",
+                        "properties": {
+                          "x": {
+                            "type": "number"
+                          },
+                          "y": {
+                            "type": "number"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "gamut_type": {
+                    "type": "string"
+                  }
+                }
+              },
+              "color_temperature": {
+                "type": "object",
+                "properties": {
+                  "mirek": {
+                    "type": "integer"
+                  },
+                  "mirek_valid": {
+                    "type": "boolean"
+                  },
+                  "mirek_schema": {
+                    "type": "object",
+                    "properties": {
+                      "mirek_minimum": {
+                        "type": "integer"
+                      },
+                      "mirek_maximum": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              },
+              "color_temperature_delta": {
+                "type": "object"
+              },
+              "dimming": {
+                "type": "object",
+                "properties": {
+                  "brightness": {
+                    "type": "number"
+                  },
+                  "min_dim_level": {
+                    "type": "number"
+                  }
+                }
+              },
+              "dimming_delta": {
+                "type": "object"
+              },
+              "identify": {
+                "type": "object"
+              },
+              "on": {
+                "type": "object",
+                "properties": {
+                  "on": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "dynamics": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  },
+                  "status_values": {
+                    "type": "array"
+                  },
+                  "speed": {
+                    "type": "number"
+                  },
+                  "speed_valid": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "alert": {
+                "type": "object",
+                "properties": {
+                  "action_values": {
+                    "type": "array"
+                  }
+                }
+              },
+              "effects": {
+                "type": "object",
+                "properties": {
+                  "status_values": {
+                    "type": "array"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "effect_values": {
+                    "type": "array"
+                  }
+                }
+              },
+              "mode": {
+                "type": "string"
+              },
+              "powerup": {
+                "type": "object",
+                "properties": {
+                  "preset": {
+                    "type": "string"
+                  },
+                  "configured": {
+                    "type": "boolean"
+                  },
+                  "on": {
+                    "type": "object",
+                    "properties": {
+                      "mode": {
+                        "type": "string"
+                      },
+                      "on": {
+                        "type": "string",
+                        "properties": {
+                          "on": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "dimming": {
+                    "type": "object",
+                    "properties": {
+                      "mode": {
+                        "type": "string"
+                      },
+                      "dimming": {
+                        "type": "object",
+                        "properties": {
+                          "brightness": {
+                            "type": "number"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "color": {
+                    "type": "object",
+                    "properties": {
+                      "mode": {
+                        "type": "string"
+                      },
+                      "color_temperature": {
+                        "type": "array"
+                      }
+                    }
+                  }
+                }
+              },
+              "signaling": {
+                "type": "object",
+                "properties": {
+                  "signal_values": {
+                    "type": "array"
+                  }
+                }
+              },
+              "type": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "light": {
+      "forms": [
+        {
+          "op": "invokeaktion",
+          "href": "https://<hue-bridege-ip>/clip/v2/resource/light/<rid>",
+          "contentType": "application/json",
+          "htv_methodName": "PUT"
+        }
+      ],
+      "idempotent": true,
+      "safe": true,
+      "input": {
+        "type": "object",
+        "writeOnly": true,
+        "readOnly": false,
+        "properties": {
+          "on": {
+            "type": "object",
+            "properties": {
+              "on": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "properties": {
+              "rid": {
+                "type": "string"
+              },
+              "rtype": {
+                "type": "string"
+              }
+            }
+          },
+          "error": {
+            "type": "array"
+          }
+        }
+      }
+    },
+    "color": {
+      "forms": [
+        {
+          "op": "invokeaktion",
+          "href": "https://<hue-bridege-ip>/clip/v2/resource/light/<rid>",
+          "contentType": "application/json",
+          "htv_methodName": "PUT"
+        }
+      ],
+      "idempotent": true,
+      "safe": true,
+      "input": {
+        "type": "object",
+        "writeOnly": true,
+        "readOnly": false,
+        "properties": {
+          "color": {
+            "type": "object",
+            "properties": {
+              "xy": {
+                "type": "object",
+                "properties": {
+                  "x": {
+                    "type": "number"
+                  },
+                  "y": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "properties": {
+              "rid": {
+                "type": "string"
+              },
+              "rtype": {
+                "type": "string"
+              }
+            }
+          },
+          "error": {
+            "type": "array"
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    "apikey"
+  ],
+  "securityDefinitions": {
+    "apikey": {
+      "in": "header",
+      "name": "hue-application-key"
+    }
+  },
+  "classification": "Digital_Twin",
+  "vendor": {
+    "_id": "Phillips_Hue",
+    "title": "Hue lightstrip plus",
+    "documentation": "https://developers.meethue.com/develop/hue-api-v2/",
+    "attributes": {
+      "model_id": "<model-id>",
+      "manufacturer_name": "Signify Netherlands B.V.",
+      "product_name": "Hue lightstrip plus",
+      "product_archetype": "hue_lightsrip",
+      "certified": "true",
+      "software_version": "<version>",
+      "hardware_platform_type": "<type>"
+    }
+  },
+  "human": {
+    "_id": "3e20b7dc-f19d-49fa-851e-c509ba807700",
+    "name": "Ben",
+    "isOwner": true
+  }
+},
+{
+  "_id": "urn:dev:thing:ec90caed-9273-420a-b044-cef614e0ecd6-schlafzimmer-1",
+  "at_context": [
+    "https://www.w3.org/2019/wot/td/v1",
+    {
+      "htv": "http://www.w3.org/2011/http#"
+    }
+  ],
+  "title": "Schlafzimmer 1",
+  "actions": {
+    "status": {
+      "forms": [
+        {
+          "op": "readallproperties",
+          "href": "https://<ikea-brige-ip>:port/v1/devices/<id>",
+          "contentType": "application/json",
+          "htv_methodName": "GET"
+        }
+      ],
+      "safe": true,
+      "idempotent": true,
+      "output": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "deviceType": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "isReachable": {
+            "type": "boolean"
+          },
+          "lastSeen": {
+            "type": "string"
+          },
+          "attributes": {
+            "type": "object",
+            "properties": {
+              "customName": {
+                "type": "string"
+              },
+              "firmwareVersion": {
+                "type": "string"
+              },
+              "hardwareVersion": {
+                "type": "string"
+              },
+              "manufacturer": {
+                "type": "string"
+              },
+              "model": {
+                "type": "string"
+              },
+              "productCode": {
+                "type": "string"
+              },
+              "seriaNumber": {
+                "type": "string"
+              },
+              "isOn": {
+                "type": "string"
+              },
+              "startupOnOff": {
+                "type": "string"
+              },
+              "lightLevel": {
+                "type": "string"
+              },
+              "colorMode": {
+                "type": "string"
+              },
+              "startupTemperature": {
+                "type": "string"
+              },
+              "colorTemperature": {
+                "type": "string"
+              },
+              "colorTemperatureMax": {
+                "type": "string"
+              },
+              "colorTemperatureMin": {
+                "type": "string"
+              },
+              "identifyPeriod": {
+                "type": "string"
+              },
+              "identifyStarted": {
+                "type": "string"
+              },
+              "permittingJoin": {
+                "type": "string"
+              },
+              "otaPolicy": {
+                "type": "string"
+              },
+              "otaProgress": {
+                "type": "string"
+              },
+              "otaSchedule": {
+                "type": "string"
+              },
+              "otaScheduleStart": {
+                "type": "string"
+              },
+              "otaState": {
+                "type": "string"
+              },
+              "otaStatus": {
+                "type": "string"
+              }
+            }
+          },
+          "capabilities": {
+            "type": "array",
+            "properties": {
+              "canSend": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "canReceive": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "room": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "color": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              }
+            }
+          },
+          "deviceSet": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "remoteLinks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "isHidden": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "light": {
+      "forms": [
+        {
+          "op": "invokeaktion",
+          "href": "https://<ikea-bridge-ip>:port/v1/devices/<id>",
+          "contentType": "application/json",
+          "htv_methodName": "PATCH"
+        }
+      ],
+      "idempotent": true,
+      "safe": true,
+      "input": {
+        "type": "object",
+        "writeOnly": true,
+        "readOnly": false,
+        "properties": {
+          "attributes": {
+            "type": "object",
+            "properties": {
+              "isOn": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    "bearer"
+  ],
+  "securityDefinitions": {
+    "bearer": {
+      "in": "header",
+      "name": "Authorization"
+    }
+  },
+  "classification": "Digital_Twin",
+  "vendor": {
+    "_id": "Ikea",
+    "title": "Ikea",
+    "documentation": "https://github.com/dvdgeisler/DirigeraClient",
+    "attributes": {
+      "firmwareVersion": "<version>",
+      "hardwareVersion": "1",
+      "manufacturer": "IKEA of Sweden",
+      "model": "TRADFRIbulbE14WSglobeopal470lm",
+      "productCode": "<code>",
+      "serialNumber": "<serial-number>"
+    }
+  },
+  "human": {
+    "_id": "3e20b7dc-f19d-49fa-851e-c509ba807700",
+    "name": "Ben",
+    "isOwner": true
+  }
+}]

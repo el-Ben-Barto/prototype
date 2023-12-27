@@ -1,0 +1,287 @@
+[{
+  "_id": {
+    "$oid": "657617daba13c56a29f42ed3"
+  },
+  "serviceId": "urn:dev:service:f09b902c-6f63-44de-a549-1d1419dbb2b5-Notice-Period-Check",
+  "readableName": "Notice Period Check",
+  "owner": "Ben",
+  "shortDescription": "Service to check notice period and contract runtime",
+  "longDescription": "Service to check notice period and contract runtime",
+  "allowedUsers": [
+    "Ben"
+  ],
+  "active": true,
+  "creationTime": {
+    "$date": "2023-12-09T23:00:00.000Z"
+  },
+  "registeredInteractions": [
+    {
+      "type": "thing",
+      "urn": "urn:dev:thing:ec90caed-4346-420a-b044-cef614e0ecd6-liability-insurance",
+      "readableName": "Liability Insurance",
+      "interaction": {
+        "action": "runtime"
+      }
+    },
+    {
+      "type": "thing",
+      "urn": "urn:dev:thing:ec90caed-4346-420a-b044-cef614e0ecd6-netflix-account",
+      "readableName": "Netflix Account",
+      "interaction": {
+        "action": "runtime"
+      }
+    },
+    {
+      "type": "thing",
+      "urn": "urn:dev:thing:ec90caed-9567-420a-b044-cef614e0ecd6-car-1",
+      "readableName": "Car 1",
+      "interaction": {
+        "action": "runtime"
+      }
+    },
+    {
+      "type": "thing",
+      "urn": "urn:dev:thing:ec90caed-9567-420a-b044-cef614e0ecd6-motorbike-1",
+      "readableName": "Motorbike 1",
+      "interaction": {
+        "action": "runtime"
+      }
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6576f33d6d67b5baf5bf9a1d"
+  },
+  "serviceId": "urn:dev:service:c09b902c-9482-44de-a549-1d1419dbb2b5-Household-Cost-Calculation",
+  "readableName": "Household cost calculataion",
+  "owner": "Ben",
+  "shortDescription": "Service to check all things which has a running payment",
+  "longDescription": "Service to check all things which has a running payment",
+  "allowedUsers": [
+    "Ben"
+  ],
+  "active": true,
+  "creationTime": {
+    "$date": "2023-12-09T23:00:00.000Z"
+  },
+  "registeredInteractions": [
+    {
+      "type": "thing",
+      "urn": "urn:dev:thing:ec90caed-4346-420a-b044-cef614e0ecd6-liability-insurance",
+      "readableName": "Liability Insurance",
+      "interaction": {
+        "action": "cost"
+      }
+    },
+    {
+      "type": "thing",
+      "urn": "urn:dev:thing:ec90caed-4346-420a-b044-cef614e0ecd6-netflix-account",
+      "readableName": "Netflix Account",
+      "interaction": {
+        "action": "cost"
+      }
+    },
+    {
+      "type": "thing",
+      "urn": "urn:dev:thing:ec90caed-5684-420a-b044-cef614e0ecd6-trash-can-paper-1",
+      "readableName": "Trash Can paper",
+      "interaction": {
+        "action": "cost"
+      }
+    },
+    {
+      "type": "thing",
+      "urn": "urn:dev:thing:ec90caed-9567-420a-b044-cef614e0ecd6-car-1",
+      "readableName": "Car 1",
+      "interaction": {
+        "action": "runtime"
+      }
+    },
+    {
+      "type": "thing",
+      "urn": "urn:dev:thing:ec90caed-9567-420a-b044-cef614e0ecd6-motorbike-1",
+      "readableName": "Motorbike 1",
+      "interaction": {
+        "action": "runtime"
+      }
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6576f7a16d67b5baf5bf9a1e"
+  },
+  "serviceId": "urn:dev:service:g82o02c-6f63-44de-a549-1d1419dbb2b5-Christmas-light-show",
+  "readableName": "Christmas light show",
+  "owner": "Ben",
+  "shortDescription": "Service to turn all lights on in the complete house for christmas lightning show",
+  "longDescription": "Service to turn all lights on in the complete house for christmas lightning show",
+  "allowedUsers": [
+    "Ben"
+  ],
+  "active": true,
+  "creationTime": {
+    "$date": "2023-12-09T23:00:00.000Z"
+  },
+  "registeredInteractions": [
+    {
+      "type": "thing",
+      "urn": "urn:dev:thing:ec90caed-4785-420a-b044-cef614e0ecd6-sultan_bulb",
+      "readableName": "Esszimmer 2",
+      "interaction": {
+        "action": "light",
+        "parameters": {
+          "on": true
+        }
+      }
+    },
+    {
+      "type": "thing",
+      "urn": "urn:dev:thing:e8405641-2619-45c1-b365-9e0e3cf18475-sultan_bulb",
+      "readableName": "Esszimmer 3",
+      "interaction": {
+        "action": "light",
+        "parameters": {
+          "on": true
+        }
+      }
+    },
+    {
+      "type": "thing",
+      "urn": "urn:dev:thing:abbd54bb-f2b5-4dd2-a4b8-22ab5ab768b9-hue_lightstrip",
+      "readableName": "Fensterbank",
+      "interaction": {
+        "action": "light",
+        "parameters": {
+          "on": true
+        }
+      }
+    },
+    {
+      "type": "integration",
+      "urn": "urn:dev:integration:ec90caed-7369-420a-b044-cef614e0ecd6-openWeatherMap-current-weater-forecast",
+      "readableName": "OpenWeatherMap current weather forecast",
+      "interaction": {
+        "action": "weather",
+        "parameters": {
+          "lat": 52.5069386,
+          "lon": 13.2599271
+        }
+      }
+    },
+    {
+      "type": "thing",
+      "urn": "urn:dev:thing:ec90caed-9273-420a-b044-cef614e0ecd6-schlafzimmer-1",
+      "readableName": "Schalfzimmer 1",
+      "interaction": {
+        "action": "light",
+        "parameters": {
+          "isOn": true
+        }
+      }
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6576f8076d67b5baf5bf9a20"
+  },
+  "serviceId": "urn:dev:service:s67902c-6f63-44de-a549-1d1419dbb2b5-Check-House-Status",
+  "readableName": "Check House Status",
+  "owner": "Ben",
+  "shortDescription": "Service to check House Status for registered Phillips Hue Things",
+  "longDescription": "Service to check House Status for registered Phillips Hue Things",
+  "allowedUsers": [
+    "Ben"
+  ],
+  "active": true,
+  "creationTime": {
+    "$date": "2023-12-09T23:00:00.000Z"
+  },
+  "registeredInteractions": [
+    {
+      "type": "thing",
+      "urn": "urn:dev:thing:ec90caed-4785-420a-b044-cef614e0ecd6-sultan_bulb",
+      "readableName": "Esszimmer 2",
+      "interaction": {
+        "action": "status"
+      }
+    },
+    {
+      "type": "thing",
+      "urn": "urn:dev:thing:e8405641-2619-45c1-b365-9e0e3cf18475-sultan_bulb",
+      "readableName": "Esszimmer 3",
+      "interaction": {
+        "action": "status"
+      }
+    },
+    {
+      "type": "thing",
+      "urn": "urn:dev:thing:abbd54bb-f2b5-4dd2-a4b8-22ab5ab768b9-hue_lightstrip",
+      "readableName": "Fensterbank",
+      "interaction": {
+        "action": "status"
+      }
+    },
+    {
+      "type": "thing",
+      "urn": "urn:dev:thing:01d64c9c-dac9-49c2-b115-917328397335-Hue-secure-contact-sensor",
+      "readableName": "Haustür",
+      "interaction": {
+        "action": "status"
+      }
+    },
+    {
+      "type": "thing",
+      "urn": "urn:dev:thing:ec90caed-9273-420a-b044-cef614e0ecd6-schlafzimmer-1",
+      "readableName": "Schalfzimmer 1",
+      "interaction": {
+        "action": "status"
+      }
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6577049f6d67b5baf5bf9a35"
+  },
+  "serviceId": " urn:dev:service:p78b902c-6f63-44de-a549-1d1419dbb2b5-Time-Management",
+  "readableName": "Time Management",
+  "owner": "Ben",
+  "shortDescription": "Service to check all things which requires a time management to orchestrate along the household",
+  "longDescription": "Service to check all things which requires a time management to orchestrate along the household",
+  "allowedUsers": [
+    "Ben"
+  ],
+  "active": true,
+  "creationTime": {
+    "$date": "2023-12-09T23:00:00.000Z"
+  },
+  "registeredInteractions": [
+    {
+      "type": "thing",
+      "urn": "urn:dev:thing:ec90caed-9567-420a-b044-cef614e0ecd6-car-1",
+      "readableName": "Car 1",
+      "interaction": {
+        "action": "timetable"
+      }
+    },
+    {
+      "type": "thing",
+      "urn": "urn:dev:thing:ec90caed-9567-420a-b044-cef614e0ecd6-motorbike-1",
+      "readableName": "Motorbike 1",
+      "interaction": {
+        "action": "timetable"
+      }
+    },
+    {
+      "type": "thing",
+      "urn": "urn:dev:thing:ec90caed-5684-420a-b044-cef614e0ecd6-trash-can-paper-1",
+      "readableName": "Trash Can paper",
+      "interaction": {
+        "action": "timetable"
+      }
+    }
+  ]
+}]

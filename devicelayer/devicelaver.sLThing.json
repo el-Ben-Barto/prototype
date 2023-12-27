@@ -1,0 +1,562 @@
+[{
+  "_id": "urn:dev:thing:01d64c9c-dac9-49c2-b115-917328397335-Hue-secure-contact-sensor",
+  "status": {
+    "errors": [],
+    "data": [
+      {
+        "id": "<id>",
+        "owner": {
+          "rid": "<rid>",
+          "rtype": "device"
+        },
+        "enabled": true,
+        "contact_report": {
+          "changed": "2023-12-13T11:55:32.765Z",
+          "state": "contact"
+        },
+        "type": "contact"
+      }
+    ]
+  },
+  "timestamp": {
+    "$date": "2023-12-12T23:00:00.000Z"
+  }
+},
+{
+  "_id": "urn:dev:thing:ec90caed-5684-420a-b044-cef614e0ecd6-trash-can-paper-1",
+  "status": {
+    "kind": "Paper",
+    "volume_liter": 240,
+    "payment": {
+      "frequency": "monthly",
+      "amount": 50,
+      "currency": "EUR"
+    },
+    "timetable": {
+      "frequency": "weekly",
+      "monday": {
+        "isAllDay": true
+      }
+    }
+  },
+  "timestamp": {
+    "$date": "2023-12-08T23:00:00.000Z"
+  }
+},
+{
+  "_id": "urn:dev:thing:ec90caed-4346-420a-b044-cef614e0ecd6-liability-insurance",
+  "status": {
+    "contract_name": "Premium Insurance",
+    "notice_period": "1 month",
+    "payment": {
+      "requency": "quarterly",
+      "amount": 120,
+      "currency": "EUR"
+    }
+  },
+  "timestamp": {
+    "$date": "2023-12-08T23:00:00.000Z"
+  }
+},
+{
+  "_id": "urn:dev:thing:ec90caed-4346-420a-b044-cef614e0ecd6-netflix-account",
+  "status": {
+    "contract_name": "Premium",
+    "notice_period": "1 month",
+    "payment": {
+      "requency": "monthly",
+      "amount": 17.99,
+      "currency": "EUR"
+    }
+  },
+  "timestamp": {
+    "$date": "2023-12-08T23:00:00.000Z"
+  }
+},
+{
+  "_id": "urn:dev:thing:ec90caed-9567-420a-b044-cef614e0ecd6-car-1",
+  "status": {
+    "available": true,
+    "insurance": "urn:dev:thing:ec90caed-4346-420a-b044-cef614e0ecd6-liability-insurance",
+    "tuev": {
+      "inspection_date": "2021-12-08T23:00:00.000Z",
+      "period": "2 years"
+    },
+    "hu": {
+      "inspection_date": "2022-12-08T23:00:00.000Z",
+      "period": "2 years"
+    },
+    "timetable": {
+      "frequency": "weekly",
+      "wednesday": {
+        "isAllDay": true
+      }
+    }
+  },
+  "timestamp": {
+    "$date": "2023-12-08T23:00:00.000Z"
+  }
+},
+{
+  "_id": "urn:dev:thing:ec90caed-9567-420a-b044-cef614e0ecd6-motorbike-1",
+  "status": {
+    "available": true,
+    "insurance": "urn:dev:thing:ec90caed-4346-420a-b044-cef614e0ecd6-liability-insurance",
+    "tuev": {
+      "inspection_date": "2021-12-08T23:00:00.000Z",
+      "period": "2 years"
+    },
+    "hu": {
+      "inspection_date": "2022-12-08T23:00:00.000Z",
+      "period": "2 years"
+    },
+    "timetable": {
+      "frequency": "weekly",
+      "wednesday": {
+        "isAllDay": true
+      }
+    }
+  },
+  "timestamp": {
+    "$date": "2023-12-08T23:00:00.000Z"
+  }
+},
+{
+  "_id": "urn:dev:thing:ec90caed-4785-420a-b044-cef614e0ecd6-sultan_bulb",
+  "status": {
+    "errors": [],
+    "data": [
+      {
+        "id": "<id>",
+        "id_v1": "/lights/2",
+        "owner": {
+          "rid": "<rid>",
+          "rtype": "device"
+        },
+        "metadata": {
+          "name": "Esszimmer 2",
+          "archetype": "sultan_bulb",
+          "function": "mixed"
+        },
+        "product_data": {
+          "function": "mixed"
+        },
+        "identify": {},
+        "on": {
+          "on": true
+        },
+        "dimming": {
+          "brightness": 100,
+          "min_dim_level": 1
+        },
+        "dimming_delta": {},
+        "color_temperature": {
+          "mirek": 366,
+          "mirek_valid": true,
+          "mirek_schema": {
+            "mirek_minimum": 153,
+            "mirek_maximum": 500
+          }
+        },
+        "color_temperature_delta": {},
+        "color": {
+          "xy": {
+            "x": 0.4573,
+            "y": 0.41
+          },
+          "gamut": {
+            "red": {
+              "x": 0.6915,
+              "y": 0.3083
+            },
+            "green": {
+              "x": 0.17,
+              "y": 0.7
+            },
+            "blue": {
+              "x": 0.1532,
+              "y": 0.0475
+            }
+          },
+          "gamut_type": "C"
+        },
+        "dynamics": {
+          "status": "none",
+          "status_values": [
+            "none",
+            "dynamic_palette"
+          ],
+          "speed": 0,
+          "speed_valid": false
+        },
+        "alert": {
+          "action_values": [
+            "breathe"
+          ]
+        },
+        "signaling": {
+          "signal_values": [
+            "no_signal",
+            "on_off",
+            "on_off_color",
+            "alternating"
+          ]
+        },
+        "mode": "normal",
+        "effects": {
+          "status_values": [
+            "no_effect",
+            "candle",
+            "fire",
+            "prism"
+          ],
+          "status": "no_effect",
+          "effect_values": [
+            "no_effect",
+            "candle",
+            "fire",
+            "prism"
+          ]
+        },
+        "powerup": {
+          "preset": "safety",
+          "configured": true,
+          "on": {
+            "mode": "on",
+            "on": {
+              "on": true
+            }
+          },
+          "dimming": {
+            "mode": "dimming",
+            "dimming": {
+              "brightness": 100
+            }
+          },
+          "color": {
+            "mode": "color_temperature",
+            "color_temperature": {
+              "mirek": 366
+            }
+          }
+        },
+        "type": "light"
+      }
+    ]
+  },
+  "timestamp": {
+    "$date": "2023-12-12T23:00:00.000Z"
+  }
+},
+{
+  "_id": "urn:dev:thing:abbd54bb-f2b5-4dd2-a4b8-22ab5ab768b9-hue_lightstrip",
+  "status": {
+    "errors": [],
+    "data": [
+      {
+        "id": "<id>",
+        "id_v1": "/lights/4",
+        "owner": {
+          "rid": "<rid>",
+          "rtype": "device"
+        },
+        "metadata": {
+          "name": "Fensterbank",
+          "archetype": "hue_lightstrip",
+          "function": "mixed"
+        },
+        "product_data": {
+          "function": "mixed"
+        },
+        "identify": {},
+        "on": {
+          "on": true
+        },
+        "dimming": {
+          "brightness": 9.49,
+          "min_dim_level": 0.03999999910593033
+        },
+        "dimming_delta": {},
+        "color_temperature": {
+          "mirek": null,
+          "mirek_valid": false,
+          "mirek_schema": {
+            "mirek_minimum": 153,
+            "mirek_maximum": 500
+          }
+        },
+        "color_temperature_delta": {},
+        "color": {
+          "xy": {
+            "x": 0.6744,
+            "y": 0.3211
+          },
+          "gamut": {
+            "red": {
+              "x": 0.6915,
+              "y": 0.3083
+            },
+            "green": {
+              "x": 0.17,
+              "y": 0.7
+            },
+            "blue": {
+              "x": 0.1532,
+              "y": 0.0475
+            }
+          },
+          "gamut_type": "C"
+        },
+        "dynamics": {
+          "status": "none",
+          "status_values": [
+            "none",
+            "dynamic_palette"
+          ],
+          "speed": 0,
+          "speed_valid": false
+        },
+        "alert": {
+          "action_values": [
+            "breathe"
+          ]
+        },
+        "signaling": {
+          "signal_values": [
+            "no_signal",
+            "on_off",
+            "on_off_color",
+            "alternating"
+          ]
+        },
+        "mode": "normal",
+        "effects": {
+          "status_values": [
+            "no_effect",
+            "candle",
+            "fire",
+            "prism"
+          ],
+          "status": "no_effect",
+          "effect_values": [
+            "no_effect",
+            "candle",
+            "fire",
+            "prism"
+          ]
+        },
+        "powerup": {
+          "preset": "safety",
+          "configured": true,
+          "on": {
+            "mode": "on",
+            "on": {
+              "on": true
+            }
+          },
+          "dimming": {
+            "mode": "dimming",
+            "dimming": {
+              "brightness": 100
+            }
+          },
+          "color": {
+            "mode": "color_temperature",
+            "color_temperature": {
+              "mirek": 366
+            }
+          }
+        },
+        "type": "light"
+      }
+    ]
+  },
+  "timestamp": {
+    "$date": "2023-12-12T23:00:00.000Z"
+  }
+},
+{
+  "_id": "urn:dev:thing:e8405641-2619-45c1-b365-9e0e3cf18475-sultan_bulb",
+  "status": {
+    "errors": [],
+    "data": [
+      {
+        "id": "<id>",
+        "id_v1": "/lights/3",
+        "owner": {
+          "rid": "<rid>",
+          "rtype": "device"
+        },
+        "metadata": {
+          "name": "Esszimmer 3",
+          "archetype": "sultan_bulb",
+          "function": "mixed"
+        },
+        "product_data": {
+          "function": "mixed"
+        },
+        "identify": {},
+        "on": {
+          "on": true
+        },
+        "dimming": {
+          "brightness": 100,
+          "min_dim_level": 1
+        },
+        "dimming_delta": {},
+        "color_temperature": {
+          "mirek": 366,
+          "mirek_valid": true,
+          "mirek_schema": {
+            "mirek_minimum": 153,
+            "mirek_maximum": 500
+          }
+        },
+        "color_temperature_delta": {},
+        "color": {
+          "xy": {
+            "x": 0.4573,
+            "y": 0.41
+          },
+          "gamut": {
+            "red": {
+              "x": 0.6915,
+              "y": 0.3083
+            },
+            "green": {
+              "x": 0.17,
+              "y": 0.7
+            },
+            "blue": {
+              "x": 0.1532,
+              "y": 0.0475
+            }
+          },
+          "gamut_type": "C"
+        },
+        "dynamics": {
+          "status": "none",
+          "status_values": [
+            "none",
+            "dynamic_palette"
+          ],
+          "speed": 0,
+          "speed_valid": false
+        },
+        "alert": {
+          "action_values": [
+            "breathe"
+          ]
+        },
+        "signaling": {
+          "signal_values": [
+            "no_signal",
+            "on_off",
+            "on_off_color",
+            "alternating"
+          ]
+        },
+        "mode": "normal",
+        "effects": {
+          "status_values": [
+            "no_effect",
+            "candle",
+            "fire",
+            "prism"
+          ],
+          "status": "no_effect",
+          "effect_values": [
+            "no_effect",
+            "candle",
+            "fire",
+            "prism"
+          ]
+        },
+        "powerup": {
+          "preset": "safety",
+          "configured": true,
+          "on": {
+            "mode": "on",
+            "on": {
+              "on": true
+            }
+          },
+          "dimming": {
+            "mode": "dimming",
+            "dimming": {
+              "brightness": 100
+            }
+          },
+          "color": {
+            "mode": "color_temperature",
+            "color_temperature": {
+              "mirek": 366
+            }
+          }
+        },
+        "type": "light"
+      }
+    ]
+  },
+  "timestamp": {
+    "$date": "2023-12-12T23:00:00.000Z"
+  }
+},
+{
+  "_id": "urn:dev:thing:ec90caed-9273-420a-b044-cef614e0ecd6-schlafzimmer-1",
+  "status": {
+    "id": "<id>",
+    "type": "light",
+    "deviceType": "light",
+    "createdAt": "2023-12-14T19:58:59.000Z",
+    "isReachable": true,
+    "lastSeen": "2023-12-14T22:53:45.000Z",
+    "attributes": {
+      "customName": "Schlafzimmer-1",
+      "firmwareVersion": "<version>",
+      "hardwareVersion": "1",
+      "manufacturer": "IKEA of Sweden",
+      "model": "<model>",
+      "productCode": "<code>",
+      "serialNumber": "<serial_number>",
+      "isOn": true,
+      "startupOnOff": "startOn",
+      "lightLevel": 8,
+      "colorMode": "temperature",
+      "startupTemperature": -1,
+      "colorTemperature": 2702,
+      "colorTemperatureMax": 2202,
+      "colorTemperatureMin": 4000,
+      "identifyPeriod": 0,
+      "identifyStarted": "2000-01-01T00:00:00.000Z",
+      "permittingJoin": false,
+      "otaPolicy": "autoUpdate",
+      "otaProgress": 0,
+      "otaScheduleEnd": "00:00",
+      "otaScheduleStart": "00:00",
+      "otaState": "readyToCheck",
+      "otaStatus": "upToDate"
+    },
+    "capabilities": {
+      "canSend": [],
+      "canReceive": [
+        "customName",
+        "isOn",
+        "lightLevel",
+        "colorTemperature"
+      ]
+    },
+    "room": {
+      "id": "<id>",
+      "name": "Schlafzimmer",
+      "color": "ikea_yellow_no_24",
+      "icon": "rooms_bed"
+    },
+    "deviceSet": [],
+    "remoteLinks": [],
+    "isHidden": false
+  },
+  "timestamp": {
+    "$date": "2023-12-13T23:00:00.000Z"
+  }
+}]

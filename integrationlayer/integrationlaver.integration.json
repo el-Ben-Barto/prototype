@@ -1,0 +1,187 @@
+[{
+  "_id": "urn:dev:integration:ec90caed-7369-420a-b044-cef614e0ecd6-openWeatherMap-current-weater-forecast",
+  "at_context": [
+    "https://www.w3.org/2019/wot/td/v1",
+    {
+      "htv": "http://www.w3.org/2011/http#"
+    }
+  ],
+  "title": "OpenWeatherMap current weather forecast",
+  "actions": {
+    "weather": {
+      "forms": [
+        {
+          "op": "readallproperties",
+          "href": "https://api.openweathermap.org/data/2.5/weather",
+          "contentType": "application/json",
+          "htv_methodName": "GET"
+        }
+      ],
+      "safe": true,
+      "idempotent": true,
+      "input": {
+        "type": "object",
+        "writeOnly": false,
+        "readOnly": true,
+        "properties": {
+          "lat": {
+            "type": "number"
+          },
+          "lon": {
+            "type": "number"
+          }
+        }
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "coord": {
+            "type": "object",
+            "properties": {
+              "lon": {
+                "type": "number"
+              },
+              "lat": {
+                "type": "number"
+              }
+            }
+          },
+          "weather": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "main": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "icon": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "base": {
+            "type": "string"
+          },
+          "main": {
+            "type": "object",
+            "properties": {
+              "temp": {
+                "type": "number"
+              },
+              "feels_like": {
+                "type": "number"
+              },
+              "temp_min": {
+                "type": "number"
+              },
+              "temp_max": {
+                "type": "number"
+              },
+              "pressure": {
+                "type": "number"
+              },
+              "humidity": {
+                "type": "number"
+              },
+              "sea_level": {
+                "type": "number"
+              },
+              "grnd_level": {
+                "type": "number"
+              }
+            }
+          },
+          "visibility": {
+            "type": "number"
+          },
+          "wind": {
+            "type": "object",
+            "properties": {
+              "speed": {
+                "type": "number"
+              },
+              "deg": {
+                "type": "number"
+              },
+              "gust": {
+                "type": "number"
+              }
+            }
+          },
+          "rain": {
+            "1h": {
+              "type": "number"
+            }
+          },
+          "clouds": {
+            "all": {
+              "type": "integer"
+            }
+          },
+          "dt": {
+            "type": "integer"
+          },
+          "sys": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "integer"
+              },
+              "id": {
+                "type": "integer"
+              },
+              "country": {
+                "type": "string"
+              },
+              "sunrise": {
+                "type": "integer"
+              },
+              "sunset": {
+                "type": "integer"
+              }
+            }
+          },
+          "timezone": {
+            "type": "integer"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "cod": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    "apikey"
+  ],
+  "securityDefinitions": {
+    "apikey": {
+      "in": "body",
+      "name": "appid"
+    }
+  },
+  "classification": "Digital_Twin",
+  "vendor": {
+    "_id": "OpenWeatherMap",
+    "title": "Current Weather Data",
+    "documentation": "https://openweathermap.org/current"
+  },
+  "human": {
+    "_id": "3e20b7dc-f19d-49fa-851e-c509ba807700",
+    "name": "Ben",
+    "isOwner": false
+  }
+}]

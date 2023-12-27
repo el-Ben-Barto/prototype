@@ -34,6 +34,9 @@ https://hub.docker.com/_/mongo
 MongoDB Atlas
 https://www.mongodb.com/docs/atlas/getting-started/ 
 
+Add Test data with:
+- servicelayer.slService.json
+
 ### Open API UI
 port = src/main/resources/application.properties --> server.port
 URL for swagger UI = http://localhost:<port>/swagger-ui.html
