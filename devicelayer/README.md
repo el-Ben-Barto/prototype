@@ -1,4 +1,4 @@
-## Service Layer for Smart Living Digital Twin - Prototype
+## Device Layer for Digital Twin for Smart Living - Prototype
 ### Requirements
 Java, Gradle, Docker, MongoDB
 
@@ -33,14 +33,14 @@ vendor.hue.documentation=https://developers.meethue.com/develop/hue-api-v2/api-r
 --> Ikea Dirigera
 Please use the library https://github.com/wjtje/dirigera to get auth token from dirigera hub
 Get Devices:
-https://192.168.178.55:8443/v1/devices 
+https://<hub-ip-address>:8443/v1/devices 
 Auth: Bearer Token
 
 Auth Code
-https://192.168.178.55:8443/v1/oauth/authorize?audience=homesmart.local&response_type=code&code_challenge=hash&code_challenge_method=S256
+https://<hub-ip-address>:8443/v1/oauth/authorize?audience=homesmart.local&response_type=code&code_challenge=hash&code_challenge_method=S256
 
 Get Access Token or use script
-https://192.168.178.55:8443/v1/oauth/token
+https://<hub-ip-address>:8443/v1/oauth/token
 
 
 
@@ -84,11 +84,9 @@ docker run -p8080:8080 generic:latest
 The Device Layer for Smart Living Digital Twin - Prototype is part of a distributed system architect containing: Service-Layer, Device-Layer & Integration-Layer
 The Device Layer application is an abstraction layer for all kinds of things for the service layer application. According to the following classification.
 It encapsulates the complexity of the different Thing classification, vendors amd technical protocols behind the different products.
---> Add Picture here
 
 Thing is represented via the Thing.class (src.main.java.domain.wot.core.Thing.class)) and can be created, updated & executed with the corresponding REST API (see Open API UI/ src.main.java.web.ServiceRouterFunctions)
-A Thing.class object contains a general description of the Things based on the WOT Thing description, SENSE WOT Description and the custom extension based on the reference architecture. 
---> Cite myself, Cite the rest 
+A Thing.class object contains a general description of the Things based on the WOT Thing description, SENSE WOT Description and the custom extension based on the reference architecture.
 
 The ID od a Thing.class instance will be generated based on the following naming convention and is the main interaction point to implement against the application:
 ```
@@ -122,11 +120,9 @@ use Encryption at rest and in flight or event client side field level encryption
 The following list the known limitations of the application with no claim to completeness.
 
 -- Missing Security features
--- Integration only of phillips hue as vendor
+-- Integration only of phillips hue and ikea as vendor
 -- Integration of light status change, change events and motion sensor
 -- Missing Automated Deployment Method including the surrounding services
--- Missing Unit Test 
--- Vendor action mapping
  
 
 

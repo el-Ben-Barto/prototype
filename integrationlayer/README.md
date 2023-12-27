@@ -1,4 +1,4 @@
-## Service Layer for Smart Living Digital Twin - Prototype
+## Integration Layer Digital Twin for Smart Living - Prototype
 ### Requirements
 Java, Gradle, Docker, MongoDB
 
@@ -20,15 +20,6 @@ adapt the following properties in src/main/resources/application.properties:
 -- Database Connection
 mongodb.connection=<connection string>
 mongodb.database=<database>
-
--- Smart Home Vendor Configuration
---> Phillips Hue
-vendor.hue.baseurl=<Address of the PHillips Hue Hub>
-vendor.hue.resource=/clip/v2/resource/device
-vendor.hue.event=/eventstream/clip/v2
-vendor.hue.username=<generated username>
-vendor.hue.clientkey=<generated clientkey>
-vendor.hue.documentation=https://developers.meethue.com/develop/hue-api-v2/api-reference/
 
 ### Configure Database
 To set up a mongoDB you can either go with the community version (self-hosted) or you can use the free tier from MongoDB Atlas (DBaaS) running in the cloud.
@@ -70,11 +61,9 @@ docker run -p8080:8080 generic:latest
 The Integration Layer for Smart Living Digital Twin - Prototype is part of a distributed system architect containing: Service-Layer, Device-Layer & Integration-Layer
 The Integration Layer application is an abstraction layer for all kinds of integrations for the service layer application. According to the following classification.
 It encapsulates the complexity of the different Integrations classification, vendors amd technical protocols behind the different integration like weather data, infrastructure data for smart cities etc..
---> Add Picture here
 
 Integration is represented via the Integration.class (src.main.java.domain.wot.core.Integration.class)) and can be created, updated & executed with the corresponding REST API (see Open API UI/ src.main.java.web.ServiceRouterFunctions)
-A Integration.class object contains a general description of the Integration based on the WOT Thing description, SENSE WOT Description and the custom extension based on the reference architecture. 
---> Cite myself, Cite the rest 
+A Integration.class object contains a general description of the Integration based on the WOT Thing description, SENSE WOT Description and the custom extension based on the reference architecture.
 
 The ID od a Integration.class instance will be generated based on the following naming convention and is the main interaction point to implement against the application:
 ```
@@ -108,12 +97,8 @@ use Encryption at rest and in flight or event client side field level encryption
 The following list the known limitations of the application with no claim to completeness.
 
 -- Missing Security features
--- Integration only of phillips hue as vendor
--- Integration of light status change, change events and motion sensor
 -- Missing Automated Deployment Method including the surrounding services
--- Missing Unit Test 
 -- Vendor action mapping
--- Logging 
  
 
 
